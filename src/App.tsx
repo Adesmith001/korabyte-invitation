@@ -4,6 +4,7 @@ import WelcomeScreen from './components/WelcomeScreen'
 import EnvelopeScreen from './components/EnvelopeScreen'
 import DeclineScreen from './components/DeclineScreen'
 import { Member, Screen } from './types'
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
     const [currentScreen, setCurrentScreen] = useState<Screen>('landing')
@@ -33,6 +34,7 @@ function App() {
 
     return (
         <>
+            <Analytics />
             <LandingScreen
                 active={currentScreen === 'landing'}
                 members={members}
