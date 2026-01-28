@@ -57,7 +57,7 @@ export default function LandingScreen({ active, members, onMemberSelect }: Landi
     return (
         <div className={`screen ${active ? 'active' : ''}`} id="landing-screen">
             <div className="watermark">[ACCESS GRANTED]</div>
-        
+
             <div className="content-container">
                 <div className="logo-container">
                     <h1 className="logo">kora<span className="logo-accent">bytes</span></h1>
