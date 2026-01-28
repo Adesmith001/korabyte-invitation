@@ -108,5 +108,25 @@
     "name": "Testament Onafowokan",
     "role": "ML engineer",
     "glaze": "Engineering machine learning systems that unlock new possibilities"
+  },
+  {
+    "name": "Chidera",
+    "role": "Founder, Evoluxe",
+    "glaze": "Redefining luxury through innovative digital experiences"
+  },
+  {
+    "name": "Oluchi",
+    "role": "Founder, Adorea",
+    "glaze": "Building brands that resonate with elegance and purpose"
+  },
+  {
+    "name": "Tehila",
+    "role": "Founder, Ooh Lala",
+    "glaze": "Creating delightful moments that spark joy and connection"
+  },
+  {
+    "name": "Heritage",
+    "role": "Founder, FramesHD",
+    "glaze": "Capturing life's definition through premium visual storytelling"
   }
 ]
