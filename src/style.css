@@ -4,46 +4,45 @@
    KORA DESIGN SYSTEM
    Brand Principles:
    - Official Kora Brand Colors
-   - Light & Clean Fintech Aesthetic
+   - Dark & Professional Fintech Aesthetic
    - Premium Typography
-   - Crisp Cards & Surfaces
+   - Glassmorphism on Navy
    - Precision Animations
    ====================== */
 
 :root {
   /* Kora Official Brand Palette */
   --kora-navy:        #031455;   /* Primary dark */
+  --kora-navy-deep:   #020d3a;   /* Deepened navy for backgrounds */
   --kora-blue:        #0092FF;   /* Primary bright */
-  --kora-cream:       #F0F3DB;   /* Neutral 1 – lightest */
-  --kora-blue-grey:   #E6EEF6;   /* Neutral 2 – blue-grey */
-  --kora-warm:        #EEE2E4;   /* Neutral 3 – warm light */
+  --kora-cream:       #F0F3DB;   /* Neutral 1 – used as soft text tint */
+  --kora-blue-grey:   #E6EEF6;   /* Neutral 2 – secondary text */
+  --kora-warm:        #EEE2E4;   /* Neutral 3 – warm accent */
 
-  /* Backgrounds */
-  --bg-primary:   var(--kora-cream);
-  --bg-secondary: var(--kora-blue-grey);
-  --bg-card:      #ffffff;
-  --bg-navy:      var(--kora-navy);
+  /* Backgrounds – deep navy-based dark theme */
+  --bg-primary:   var(--kora-navy-deep);
+  --bg-secondary: var(--kora-navy);
+  --bg-surface:   rgba(3, 20, 85, 0.55);
 
-  /* Surface / Glass */
-  --glass-bg:        rgba(255, 255, 255, 0.72);
-  --glass-border:    rgba(3, 20, 85, 0.10);
-  --glass-highlight: rgba(0, 146, 255, 0.06);
+  /* Glass / Surfaces on dark */
+  --glass-bg:        rgba(3, 20, 85, 0.50);
+  --glass-border:    rgba(255, 255, 255, 0.10);
+  --glass-highlight: rgba(0, 146, 255, 0.08);
 
   /* Text */
-  --text-primary:   var(--kora-navy);
-  --text-secondary: rgba(3, 20, 85, 0.65);
-  --text-tertiary:  rgba(3, 20, 85, 0.38);
-  --text-on-dark:   #ffffff;
+  --text-primary:   #ffffff;
+  --text-secondary: var(--kora-blue-grey);
+  --text-tertiary:  rgba(230, 238, 246, 0.45);
 
   /* Accent */
   --accent-primary:  var(--kora-blue);
   --accent-secondary: var(--kora-navy);
-  --accent-glow:     rgba(0, 146, 255, 0.22);
+  --accent-glow:     rgba(0, 146, 255, 0.28);
 
   /* Gradients */
-  --gradient-hero:   linear-gradient(160deg, var(--kora-navy) 0%, #0a2070 100%);
+  --gradient-hero:   linear-gradient(160deg, var(--kora-navy-deep) 0%, var(--kora-navy) 100%);
   --gradient-accent: linear-gradient(135deg, var(--kora-blue) 0%, var(--kora-navy) 100%);
-  --gradient-warm:   linear-gradient(135deg, var(--kora-cream) 0%, var(--kora-blue-grey) 100%);
+  --gradient-subtle: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 100%);
 }
 
 * {
@@ -89,7 +88,7 @@ body {
   pointer-events: none;
   overflow-y: auto;
   transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  background: var(--gradient-warm);
+  background: var(--bg-primary);
 }
 
 .screen.active {
@@ -100,7 +99,6 @@ body {
 #envelope-screen {
   align-items: flex-end;
   padding-bottom: 100px;
-  background: var(--bg-secondary);
 }
 
 .content-container {
@@ -156,7 +154,7 @@ body {
   top: -80px;
   right: -80px;
   background: var(--kora-blue);
-  opacity: 0.18;
+  opacity: 0.12;
 }
 
 .orb-2 {
@@ -165,7 +163,7 @@ body {
   bottom: 60px;
   left: -60px;
   background: var(--kora-navy);
-  opacity: 0.12;
+  opacity: 0.60;
 }
 
 .orb-3 {
@@ -173,8 +171,8 @@ body {
   height: 200px;
   top: 40%;
   right: 10%;
-  background: var(--kora-warm);
-  opacity: 0.45;
+  background: var(--kora-blue);
+  opacity: 0.07;
 }
 
 .logo-container {
@@ -212,7 +210,7 @@ body {
   font-weight: 200;
   letter-spacing: -0.03em;
   margin-bottom: 12px;
-  color: var(--kora-navy);
+  color: var(--text-primary);
 }
 
 .logo-accent {
@@ -265,15 +263,14 @@ body {
   padding: 16px 20px;
   font-size: 17px;
   font-weight: 400;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1.5px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid var(--glass-border);
   border-radius: 14px;
   color: var(--text-primary);
   outline: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 12px rgba(3, 20, 85, 0.06);
 }
 
 .name-input::placeholder {
@@ -281,9 +278,9 @@ body {
 }
 
 .name-input:focus {
-  background: #ffffff;
+  background: rgba(3, 20, 85, 0.70);
   border-color: var(--kora-blue);
-  box-shadow: 0 0 0 4px var(--accent-glow), 0 2px 12px rgba(3, 20, 85, 0.08);
+  box-shadow: 0 0 0 4px var(--accent-glow);
 }
 
 /* ======================
@@ -295,16 +292,16 @@ body {
   top: calc(100% + 8px);
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.96);
+  background: var(--glass-bg);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
-  border: 1.5px solid var(--glass-border);
+  border: 1px solid var(--glass-border);
   border-radius: 14px;
   overflow: hidden;
   max-height: 280px;
   overflow-y: auto;
   z-index: 100;
-  box-shadow: 0 16px 40px -8px rgba(3, 20, 85, 0.18);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
 }
 
 .dropdown.hidden {
@@ -315,7 +312,7 @@ body {
   padding: 14px 20px;
   cursor: pointer;
   transition: background 0.2s ease;
-  border-bottom: 1px solid rgba(3, 20, 85, 0.06);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .dropdown-item:last-child {
@@ -323,7 +320,7 @@ body {
 }
 
 .dropdown-item:hover {
-  background: var(--kora-blue-grey);
+  background: var(--glass-highlight);
 }
 
 .dropdown-item-name {
@@ -336,6 +333,7 @@ body {
 .dropdown-item-role {
   font-size: 13px;
   color: var(--text-secondary);
+  opacity: 0.8;
 }
 
 .hint-text {
@@ -387,7 +385,7 @@ body {
   margin-bottom: 32px;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  color: var(--kora-navy);
+  color: var(--text-primary);
 }
 
 #user-name {
@@ -399,12 +397,11 @@ body {
 .role-container {
   margin-bottom: 24px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.80);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1.5px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(3, 20, 85, 0.07);
 }
 
 .role-label {
@@ -419,7 +416,7 @@ body {
 .user-role {
   font-size: 17px;
   font-weight: 500;
-  color: var(--kora-navy);
+  color: var(--text-primary);
   line-height: 1.4;
 }
 
@@ -446,7 +443,7 @@ body {
   font-size: 19px;
   line-height: 1.55;
   margin-bottom: 16px;
-  color: var(--kora-navy);
+  color: var(--text-primary);
   font-weight: 400;
 }
 
@@ -460,7 +457,7 @@ body {
 .message-question {
   font-size: 19px;
   font-weight: 600;
-  color: var(--kora-navy);
+  color: var(--text-primary);
 }
 
 .highlight {
@@ -516,17 +513,16 @@ body {
 }
 
 .btn-no {
-  background: rgba(255, 255, 255, 0.70);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
   color: var(--text-secondary);
-  border: 1.5px solid var(--glass-border);
+  border: 1px solid var(--glass-border);
 }
 
 .btn-no:hover {
-  background: var(--kora-warm);
-  color: var(--kora-navy);
-  border-color: rgba(3, 20, 85, 0.18);
+  background: rgba(3, 20, 85, 0.70);
+  color: var(--text-primary);
 }
 
 /* ======================
@@ -554,7 +550,7 @@ body {
   height: 100%;
   background: var(--gradient-accent);
   border-radius: 16px;
-  box-shadow: 0 25px 60px -15px rgba(3, 20, 85, 0.35);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5);
 }
 
 .envelope-front {
@@ -601,7 +597,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 4;
-  box-shadow: 0 4px 16px rgba(3, 20, 85, 0.20);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.30);
 }
 
 .seal-inner {
@@ -626,7 +622,7 @@ body {
   height: auto;
   display: block;
   border-radius: 16px;
-  box-shadow: 0 25px 60px -15px rgba(3, 20, 85, 0.30);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5);
 }
 
 .envelope-flap-overlay {
@@ -648,10 +644,10 @@ body {
   transform: translateX(-50%);
   width: 95%;
   max-width: 428px;
-  background: rgba(255, 255, 255, 0.96);
+  background: var(--glass-bg);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
-  border: 1.5px solid rgba(3, 20, 85, 0.10);
+  border: 1px solid var(--glass-border);
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   border-bottom-left-radius: 0;
@@ -660,7 +656,7 @@ body {
   padding-bottom: 40px;
   opacity: 0;
   z-index: 100;
-  box-shadow: 0 -8px 40px -8px rgba(3, 20, 85, 0.18);
+  box-shadow: 0 -10px 60px -10px rgba(0, 0, 0, 0.5);
 }
 
 .card-header {
@@ -669,13 +665,13 @@ body {
   align-items: center;
   margin-bottom: 20px;
   padding-bottom: 16px;
-  border-bottom: 1px solid rgba(3, 20, 85, 0.08);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .card-logo {
   font-size: 20px;
   font-weight: 700;
-  color: var(--kora-navy);
+  color: var(--text-primary);
 }
 
 .card-badge {
@@ -691,7 +687,7 @@ body {
   margin-bottom: 24px;
   text-align: center;
   letter-spacing: -0.02em;
-  color: var(--kora-navy);
+  color: var(--text-primary);
 }
 
 .card-details {
@@ -703,7 +699,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(3, 20, 85, 0.07);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .detail-row:last-child {
@@ -718,8 +714,8 @@ body {
 
 .detail-value {
   font-size: 15px;
-  color: var(--kora-navy);
-  font-weight: 600;
+  color: var(--text-primary);
+  font-weight: 500;
   text-align: right;
 }
 
@@ -789,7 +785,7 @@ body {
   font-weight: 300;
   margin-bottom: 24px;
   letter-spacing: -0.02em;
-  color: var(--kora-navy);
+  color: var(--text-primary);
 }
 
 .decline-message {
@@ -818,12 +814,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(3, 20, 85, 0.15);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(3, 20, 85, 0.28);
+  background: rgba(255, 255, 255, 0.22);
 }
 
 /* ======================
