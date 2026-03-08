@@ -56,11 +56,19 @@ export default function LandingScreen({ active, members, onMemberSelect }: Landi
 
     return (
         <div className={`screen ${active ? 'active' : ''}`} id="landing-screen">
+            <div className="screen-orbs" aria-hidden="true">
+                <div className="orb orb-1"></div>
+                <div className="orb orb-2"></div>
+                <div className="orb orb-3"></div>
+            </div>
+
             <div className="watermark">[ACCESS GRANTED]</div>
 
             <div className="content-container">
                 <div className="logo-container">
+                    <div className="landing-badge">✦ Invitation Only ✦</div>
                     <h1 className="logo">kora<span className="logo-accent">bytes</span></h1>
+                    <div className="logo-divider"></div>
                     <div className="logo-subtitle">Executive Society</div>
                 </div>
 

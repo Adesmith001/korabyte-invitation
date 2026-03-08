@@ -12,15 +12,23 @@ export default function WelcomeScreen({ active, member, onYes, onNo }: WelcomeSc
 
     return (
         <div className={`screen ${active ? 'active' : ''}`} id="welcome-screen">
+            <div className="screen-orbs" aria-hidden="true">
+                <div className="orb orb-1"></div>
+                <div className="orb orb-2"></div>
+            </div>
+
             <div className="watermark watermark-welcome">DECRYPTED_V1.04</div>
 
             <div className="content-container">
                 <div className="welcome-content">
+                    <div className="ambassador-badge">✦ Ambassador Selected ✦</div>
                     <h2 className="greeting">Hi <span id="user-name">{member.name}</span>,</h2>
 
                     <div className="role-container">
-                        <div className="role-label">Your Role</div>
-                        <div className="user-role">{member.role}</div>
+                        <div className="role-container-inner">
+                            <div className="role-label">Your Role</div>
+                            <div className="user-role">{member.role}</div>
+                        </div>
                     </div>
 
                     <div className="glaze-container">

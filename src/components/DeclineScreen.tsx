@@ -7,6 +7,7 @@ export default function DeclineScreen({ active }: DeclineScreenProps) {
         <div className={`screen ${active ? 'active' : ''}`} id="decline-screen">
             <div className="content-container">
                 <div className="decline-content">
+                    <div className="decline-icon">✦</div>
                     <h2 className="decline-title">We understand.</h2>
                     <p className="decline-message">
                         The door remains open for visionaries like you.
